@@ -33,6 +33,9 @@
 
 <script setup>
 import http from "@/api/pc";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
 
 const loading = ref(false);
 
@@ -73,7 +76,10 @@ const tabs = ref([
 const currentTabs = ref("");
 
 const getDataInfo = async (val) => {
-  const res = await http.getStorageInfo();
+  // const res2 = await http.getStorageInfo2();
+  console.log(route);
+  const res = await http.getStorageInfo(route.query.ip);
+
   if (val === "device") {
     return res.map((item) => {
       const obj = {};

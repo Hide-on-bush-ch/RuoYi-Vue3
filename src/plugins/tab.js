@@ -66,6 +66,13 @@ export default {
   openPage(url) {
     return router.push(url);
   },
+  // 切换菜单并传参
+  changeMenu(url, query) {
+    return router.push({
+      path: url,
+      query: query || {},
+    });
+  },
   // 修改tab页签
   updatePage(obj) {
     return useTagsViewStore().updateVisitedView(obj);

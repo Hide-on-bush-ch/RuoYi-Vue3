@@ -196,3 +196,18 @@ aside {
     margin-bottom: 10px;
   }
 }
+
+.add-dialog {
+  .el-dialog__body > .el-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    .el-form-item {
+      width: 50%;
+      .el-form-item__label {
+        overflow: hidden;
+      }
+    }
+  }
+}
